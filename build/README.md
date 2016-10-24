@@ -6,6 +6,22 @@ Run the following to bring down all the dependencies
 $ npm install
 ```
 
+# Development
+
+New features should be developed on separate branches and merged back into `master` once complete. To aid in the development process, 
+a gulp task is configured to update all of the github template urls to point at a specific branch so that UI definition and web based 
+deployments can be tested. To run the task
+
+```sh
+npm run links
+```
+
+will update the links to point to the name of the current branch. Once ready to merge back into `master`, a specific branch name can be passed with
+
+```sh
+npm run links -- --branch master
+```
+
 # Build
 
 To build the project call
@@ -16,7 +32,7 @@ $ npm run build
 
 This will patch the templates according to the configured `build/allowedValues.json` and generate the various data node templates as well as doing several sanity checks and assertions.
 
-The result will be a distribution zip under `dist/elasticsearch-marketplace-DATE.zip` ready to be uploaded to the publisher portal.
+The result will be a distribution zip under `dist/elasticsearch-marketplace-{DATE}.zip` ready to be uploaded to the publisher portal.
 
 
 # Development
@@ -76,7 +92,7 @@ $ npm run azure-cleanup
 ```
 Will remove all resource-groups starting with `test-*`
 
-# Automated ui tests
+# Automated UI tests
 
 The automated ui tests are not (yet) part of the main test command to run them:
 

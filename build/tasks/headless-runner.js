@@ -9,10 +9,10 @@ process.env["PHANTOMJS_EXECUTABLE"] = phantomjs.path;
 
 gulp.task("headless", function (cb) {
   try {
-    stats = fs.statSync("../build/ui-tests/ui-tests-config.json");
+    stats = fs.statSync("../build/.test.json");
   }
   catch (e) {
-    console.error("In order to run headless tests copy ui-tests-config.example.json => ui-tests-config.json in 'build/ui-tests'", e);
+    console.error("In order to run headless tests copy .test.example.json => .test.json in 'build' and fill in the details", e);
     process.exit(1)
   }
   var runner = '../build/ui-tests/runner.js'

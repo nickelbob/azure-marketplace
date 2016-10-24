@@ -51,3 +51,4 @@ parameters/test*.parameters.json
 .idea/
 
 .vscode/
+build/screenshots/
