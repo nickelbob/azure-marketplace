@@ -392,12 +392,12 @@ node_is_up()
 }
 wait_for_started()
 {
-  for i in $(seq 30); do
+  for i in $(seq 60); do
     if $(node_is_up "changeme" || node_is_up "$USER_ADMIN_PWD"); then
       log "[wait_for_started] Node is up!"
       return
     else
-      sleep 5
+      sleep 10
       log "[wait_for_started] Seeing if node is up for the after sleeping 5 seconds, retry ${i}/30"
     fi
   done
